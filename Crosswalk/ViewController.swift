@@ -120,7 +120,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate  {
         println("Error while updating location " + error.localizedDescription)
     }
     
-    /*Used mainly for printing and calling main intersection activity*/
+    /*Used mainly for printing and calling main intersection activity adapted from rshankar.com/get-your-current-address-in-swift*/
     func parseLocationInfo(placemark: CLPlacemark?) {
         if let containsPlacemark = placemark {
             //stop updating location to save battery life
@@ -143,7 +143,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate  {
         }
     }
     
-    /*Main activity, realistically needs a ton of refactoring*/
+    /*Main activity, realistically needs a ton of refactoring, HTTP handling via jamesonquave.com/blog/developing-ios-apps-using-swift-tutorial*/
     func searchGeo(placemark: CLPlacemark!){
         let lat = placemark.location.coordinate.latitude
         let longit = placemark.location.coordinate.longitude
