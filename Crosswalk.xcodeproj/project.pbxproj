@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB637F6A1A6B862200544CE9 /* crosswalk_main.png in Resources */ = {isa = PBXBuildFile; fileRef = AB637F691A6B862200544CE9 /* crosswalk_main.png */; };
+		AB637F6C1A6B873100544CE9 /* crosswalk_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AB637F6B1A6B873100544CE9 /* crosswalk_logo.png */; };
 		ABB0A0D01A6AA4B700B33FD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0A0CF1A6AA4B700B33FD6 /* AppDelegate.swift */; };
 		ABB0A0D31A6AA4B700B33FD6 /* Crosswalk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABB0A0D11A6AA4B700B33FD6 /* Crosswalk.xcdatamodeld */; };
 		ABB0A0D51A6AA4B700B33FD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0A0D41A6AA4B700B33FD6 /* ViewController.swift */; };
@@ -14,6 +16,8 @@
 		ABB0A0DA1A6AA4B700B33FD6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABB0A0D91A6AA4B700B33FD6 /* Images.xcassets */; };
 		ABB0A0DD1A6AA4B700B33FD6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABB0A0DB1A6AA4B700B33FD6 /* LaunchScreen.xib */; };
 		ABB0A0E91A6AA4B700B33FD6 /* CrosswalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0A0E81A6AA4B700B33FD6 /* CrosswalkTests.swift */; };
+		ABB0A0F31A6AA5F100B33FD6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB0A0F21A6AA5F100B33FD6 /* CoreLocation.framework */; };
+		ABB0A0F51A6AAF3500B33FD6 /* crosswalk.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB0A0F41A6AAF3500B33FD6 /* crosswalk.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB637F691A6B862200544CE9 /* crosswalk_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = crosswalk_main.png; path = ../crosswalk_main.png; sourceTree = "<group>"; };
+		AB637F6B1A6B873100544CE9 /* crosswalk_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crosswalk_logo.png; sourceTree = "<group>"; };
 		ABB0A0CA1A6AA4B700B33FD6 /* Crosswalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crosswalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB0A0CE1A6AA4B700B33FD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABB0A0CF1A6AA4B700B33FD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +44,8 @@
 		ABB0A0E21A6AA4B700B33FD6 /* CrosswalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrosswalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB0A0E71A6AA4B700B33FD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABB0A0E81A6AA4B700B33FD6 /* CrosswalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswalkTests.swift; sourceTree = "<group>"; };
+		ABB0A0F21A6AA5F100B33FD6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		ABB0A0F41A6AAF3500B33FD6 /* crosswalk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crosswalk.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABB0A0F31A6AA5F100B33FD6 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +70,7 @@
 		ABB0A0C11A6AA4B700B33FD6 = {
 			isa = PBXGroup;
 			children = (
+				ABB0A0F21A6AA5F100B33FD6 /* CoreLocation.framework */,
 				ABB0A0CC1A6AA4B700B33FD6 /* Crosswalk */,
 				ABB0A0E51A6AA4B700B33FD6 /* CrosswalkTests */,
 				ABB0A0CB1A6AA4B700B33FD6 /* Products */,
@@ -79,9 +89,12 @@
 		ABB0A0CC1A6AA4B700B33FD6 /* Crosswalk */ = {
 			isa = PBXGroup;
 			children = (
+				AB637F691A6B862200544CE9 /* crosswalk_main.png */,
 				ABB0A0CF1A6AA4B700B33FD6 /* AppDelegate.swift */,
 				ABB0A0D41A6AA4B700B33FD6 /* ViewController.swift */,
 				ABB0A0D61A6AA4B700B33FD6 /* Main.storyboard */,
+				AB637F6B1A6B873100544CE9 /* crosswalk_logo.png */,
+				ABB0A0F41A6AAF3500B33FD6 /* crosswalk.png */,
 				ABB0A0D91A6AA4B700B33FD6 /* Images.xcassets */,
 				ABB0A0DB1A6AA4B700B33FD6 /* LaunchScreen.xib */,
 				ABB0A0D11A6AA4B700B33FD6 /* Crosswalk.xcdatamodeld */,
@@ -196,7 +209,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABB0A0D81A6AA4B700B33FD6 /* Main.storyboard in Resources */,
+				AB637F6A1A6B862200544CE9 /* crosswalk_main.png in Resources */,
+				ABB0A0F51A6AAF3500B33FD6 /* crosswalk.png in Resources */,
 				ABB0A0DD1A6AA4B700B33FD6 /* LaunchScreen.xib in Resources */,
+				AB637F6C1A6B873100544CE9 /* crosswalk_logo.png in Resources */,
 				ABB0A0DA1A6AA4B700B33FD6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +425,7 @@
 				ABB0A0EE1A6AA4B700B33FD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ABB0A0EF1A6AA4B700B33FD6 /* Build configuration list for PBXNativeTarget "CrosswalkTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +434,7 @@
 				ABB0A0F11A6AA4B700B33FD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
