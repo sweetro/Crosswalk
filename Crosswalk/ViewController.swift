@@ -22,7 +22,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate  {
     @IBOutlet weak var intersectionLabel: UILabel!
     @IBOutlet weak var setDist: UILabel!
     @IBOutlet weak var smartSwitch: UISwitch!
-    var alertDistThreshold = 0.3
+    var alertDistThreshold = 30.0
     var locationDistFilter = 15.0
     let locationManager = CLLocationManager()
     var active = false
@@ -32,6 +32,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate  {
     var previousDistanceToIntersection = 99999.0
     var alertTriggered = false
     var smartAlertOn = false
+    var hasBeenSmartAdjusted = false
     
     
     /*Enables/Disables smart tracking*/
@@ -52,7 +53,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate  {
     @IBAction func alertThresholdSliderValueChanged(sender: UISlider) {
         var currentValue = sender.value
         alertThresholdLabel.text = NSString(format: "%.0f", currentValue) + " m"
-        alertDistThreshold = Double(currentValue)/1000
+        alertDistThreshold = Double(currentValue)
     }
     
     /*Frequency of update from non smart mode*/
@@ -193,8 +194,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate  {
                                     localNotification.soundName = UILocalNotificationDefaultSoundName
                                     localNotification.fireDate = NSDate(timeIntervalSinceNow: 0)
                                     UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-                                    
-                                }
+                                                            }
                                 
                             }
                         }
@@ -203,6 +203,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate  {
                 })
             })
             task.resume()
+           
         }
         
     }
@@ -248,19 +249,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate  {
         println(previousIntersectedStreetTwo)
         if ((previousIntersectedStreetOne == street1 && previousIntersectedStreetTwo == street2) ||
             (previousIntersectedStreetOne == street2 && previousIntersectedStreetTwo == street1)){
-                if(alertTriggered == false){
+                if(alertTriggered == false && hasBeenSmartAdjusted == false){
                     if(alertDistThreshold < distance){
                         var walkSpeed = 1.25 //m/sec
-                        var distInMeters = (distance - (alertDistThreshold * 1000))
+                        var distInMeters = (distance - alertDistThreshold)
                         var timeUntil = distInMeters/walkSpeed
                         locationManager.distanceFilter = distInMeters/2
+                        println("CURRENT FILTR" + "\(locationManager.distanceFilter)")
+                        hasBeenSmartAdjusted = true
                     }
                 }
-                
         }
         else {
             previousIntersectedStreetOne = street1
             previousIntersectedStreetTwo = street2
+             hasBeenSmartAdjusted = false
+            alertTriggered = false
             locationManager.distanceFilter = 5.0 //retry to make sure still on same street
             
         }
